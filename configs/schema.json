@@ -1,0 +1,54 @@
+{
+  "static_features": [
+    "age",
+    "sex_code",
+    "weight",
+    "smoking_years",
+    "drinking_years",
+    "pathology_type_0",
+    "pathology_type_1",
+    "pathology_type_2",
+    "pathology_type_3",
+    "pathology_type_4",
+    "pathology_type_5",
+    "pathology_type_6",
+    "pathology_type_7",
+    "age_missing",
+    "sex_code_missing",
+    "weight_missing",
+    "smoking_years_missing",
+    "drinking_years_missing",
+    "pathology_type_missing"
+  ],
+  "longitudinal_features": [
+    "BMI",
+    "systolic_blood_pressure",
+    "glucose",
+    "cholesterol",
+    "ldl",
+    "triglyceride",
+    "hdl",
+    "d_dimer",
+    "platelet",
+    "neutrophil",
+    "lymphocyte",
+    "nlr",
+    "crp",
+    "il6",
+    "egfr",
+    "creatinine"
+  ],
+  "treatment_features": [
+    "chemotherapy",
+    "radiotherapy",
+    "surgery_or_procedure",
+    "immunotherapy",
+    "targeted_therapy"
+  ],
+  "target_features": [
+    "endpoint_tbr",
+    "endpoint_cac"
+  ],
+  "time_patches": 3,
+  "max_events": 48
+}

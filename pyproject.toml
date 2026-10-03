@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vascchangeformer"
+version = "0.1.0"
+description = "VascChangeFormer: longitudinal vascular change prediction and multicentre validation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=2.1,<3",
+  "pandas>=2.2,<3",
+  "scipy>=1.14,<2",
+  "scikit-learn>=1.6,<1.7",
+  "torch>=2.7,<3",
+  "xgboost>=2.1,<4",
+  "matplotlib>=3.9,<4",
+  "PyYAML>=6,<7",
+  "xlrd>=2.0,<3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

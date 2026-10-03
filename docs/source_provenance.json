@@ -1,0 +1,638 @@
+{
+  "release_date": "2026-10-03",
+  "internal_model_id": "vascmtl",
+  "public_project_name": "VascChangeFormer",
+  "source_snapshot": "FULL_INPUT_A354_20260922/source_snapshot",
+  "reference_sources": [
+    {
+      "source": "A323_B31_SPLIT_STATIC19_LONG16_20260926/results/A323_internal_fivefold_metrics_95ci.csv",
+      "sha256": "c5297135363fa4074588d41529efad655a9126e2858ce4a0699d8ae6819f913e",
+      "development_centre": "A",
+      "evaluation_centre": "A",
+      "n": 323
+    },
+    {
+      "source": "C546_DEVELOPMENT_A323_B31_EXTERNAL_20260928/external_validation/A/C546_to_A323_change_metrics_95ci.csv",
+      "sha256": "684a1e219c6c55682c2de3fb9d64708de56f9fcc3ebef1d43925e1399150e42f",
+      "development_centre": "C",
+      "evaluation_centre": "A",
+      "n": 323
+    },
+    {
+      "source": "A323_FULL_REFIT_B31_EXTERNAL_STATIC19_LONG16_20260926/B31_external_change_metrics_95ci.csv",
+      "sha256": "b323e819ac4596828a7d488a4dea04bdece18de1df2ac673cbb9dde041cec19d",
+      "development_centre": "A",
+      "evaluation_centre": "B",
+      "n": 31
+    },
+    {
+      "source": "C546_DEVELOPMENT_A323_B31_EXTERNAL_20260928/external_validation/B/C546_to_B31_change_metrics_95ci.csv",
+      "sha256": "e0da14e0d86236f9364c2fd892bb024a79bb2546fcf8ec44883e7dfed74eccbf",
+      "development_centre": "C",
+      "evaluation_centre": "B",
+      "n": 31
+    },
+    {
+      "source": "A323_FULL_FINAL_C546_EXTERNAL_20260926/continuous/C546_external_change_metrics_95ci.csv",
+      "sha256": "fa0e5f66bd45754a71d8406fe1b7ae43fcf536ce29f983f14b47b28199d2843d",
+      "development_centre": "A",
+      "evaluation_centre": "C",
+      "n": 546
+    },
+    {
+      "source": "C546_DEVELOPMENT_A323_B31_EXTERNAL_20260928/results/C546_OOF_change_metrics_95ci.csv",
+      "sha256": "4388f5d3fbc3bff1dbb5314931cf21a4e2fcc21916e3e1d9ebc8a20db6e10dc8",
+      "development_centre": "C",
+      "evaluation_centre": "C",
+      "n": 546
+    }
+  ],
+  "source_files": [
+    {
+      "file": "src/lac_itransformer/__init__.py",
+      "source_sha256": "7e9a9ce9bd29225780e34f9e6523b0d26a8c224b32890fd0229766a6417c29d6"
+    },
+    {
+      "file": "src/lac_itransformer/cli.py",
+      "source_sha256": "a6259d2cdc861dae0dc103e25ce4bc15cb395d790b2c941f8984966529bb82a5"
+    },
+    {
+      "file": "src/lac_itransformer/config.py",
+      "source_sha256": "10b0db98a9aab2c03b211ceace9c6c3f39f5a86106ff8415697ffaf857efadee"
+    },
+    {
+      "file": "src/lac_itransformer/data/__init__.py",
+      "source_sha256": "7e4c28d45164cd7b9498e79d643c997224247902d519bc075796d6dda4cdd064"
+    },
+    {
+      "file": "src/lac_itransformer/data/development_workbook.py",
+      "source_sha256": "27394c4cde9a0eadde65546b46738dcb8bbe5b1357a352cc7f57cbd849787be0"
+    },
+    {
+      "file": "src/lac_itransformer/data/external_validation.py",
+      "source_sha256": "f239546bad980fc7f5c5f46115be7e3d95fce46e354839b2dd8917d85ef64a7d"
+    },
+    {
+      "file": "src/lac_itransformer/data/preprocessing.py",
+      "source_sha256": "1005e104b203e3d703149f9748532a0e326d8819572105db0083d4e296c1729e"
+    },
+    {
+      "file": "src/lac_itransformer/data/schema.py",
+      "source_sha256": "d6082774e4cb9c42d74879025e6c3769a368012048c7e49d906f2b0b00716d42"
+    },
+    {
+      "file": "src/lac_itransformer/data/shandong_external.py",
+      "source_sha256": "ef1ebd6e2886777b582e361d2083a2f7a3b5de2b43b6bf7fa47718b190d407f9"
+    },
+    {
+      "file": "src/lac_itransformer/data/shandong_workbook.py",
+      "source_sha256": "65024571764096353c769c54cff233e86900adff3e441d714ae7bbb97156131a"
+    },
+    {
+      "file": "src/lac_itransformer/data/synthetic.py",
+      "source_sha256": "c4e57729ce4f331f4faf4807782de8eca377e2cb3451fe9b94416dac021e3725"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/__init__.py",
+      "source_sha256": "58e0429a78fdc485b86a39a097f267d1d787f2265d8f73743e4467e9b36b442f"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_core_ablation_bootstrap.py",
+      "source_sha256": "aa80f34021fd44c4bf2e5147b4e307f99cae77209008197414d98d11c1ec07bb"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_dual_task_controls_bootstrap.py",
+      "source_sha256": "7961383262eb731a58b19a3ae8bcadce01f3c6b31bfcae1fdd22ef598667ef00"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_paired_bootstrap.py",
+      "source_sha256": "6d758451487984d3d09ddfee1b60949d2e95b923f2e98c45fae51aedcf7c91ed"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_stage_stability.py",
+      "source_sha256": "729f0145ceb1ba828263493928ec43670785b044a40ef38ed519e85a99210d4c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_vascmtl_ablation_bootstrap.py",
+      "source_sha256": "38fca1b148e79521413e4ed5a7ff75b526eb92ea99d35611b65592062d982913"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/a_center_vascmtl_baseline_bootstrap.py",
+      "source_sha256": "74bae5f6381c1e1c5f1ea9c8a64114f3a94cbded9592c34d0c6189327821e9ed"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/ablation.py",
+      "source_sha256": "2bde022c26be9295f1123fc0490c2556e66b57bba05367671dcd10c8433ca920"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/clinical_patterns.py",
+      "source_sha256": "acc452726a59fc2ac100189f39ae3f767e5890f71190dd494b051f6b0489ed48"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/combine_nested_folds.py",
+      "source_sha256": "a05c828fce60178e1b22f2ddb671915e863c4134f7ae4659f11242f0b11032ac"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/comparison.py",
+      "source_sha256": "141353c3a3347ac4c63d59863537bb9a764371f56e6ff055abcf02dfcd97c3c8"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/core_ablation.py",
+      "source_sha256": "818a43c609786f730fc251019a8cec6210933619edcddb7d7a6d6ec5e8da6e1d"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/derive_v40_decision_ablations.py",
+      "source_sha256": "76420513bffe482141048d88a6c4c495cd73b33e88660e86c91ba8d02be0ef36"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/explainability.py",
+      "source_sha256": "bbc76c043ac2cc17c367d4814d964d71ec64145959d0b445a4be0c32a32b362a"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/internal_cv.py",
+      "source_sha256": "3632e8eeee6c5fc4f2b456ae2fb55d92ef99e136985d0fd5fe74cc2a75a31e8c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/materialize_v40_selected_policy.py",
+      "source_sha256": "40a8def472cc9b4eb5293adf83d1c94371e8a420d28e5650d8e6f81986d1407e"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/multitask.py",
+      "source_sha256": "d1fa744a049d9a494a461198b695f86987f235f996799562a55340ef76afae14"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/prediction.py",
+      "source_sha256": "a44a3a071d44a8b0a953683edc6746ef6087c606a86dcaca60f8f041a9bd0ecb"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/protocol.py",
+      "source_sha256": "8d2e7364b2255a6147e73724cf31608a06f5516b8c147ca7e3617fedc1de4d51"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/real_internal.py",
+      "source_sha256": "7fa34949c42610ca7b71be341eb5938c7b3aadaf881101a8bf0f2f346cb6859d"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/runner.py",
+      "source_sha256": "434e4c75d6a41cbc6d135d8e0090cceb60232d94eb5b86a3d3a7c6c9b327a03f"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/synthetic_diagnostic.py",
+      "source_sha256": "9f4352d4509518fa681cf8da417690d695b444ae45942927acbe07b7792879b4"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v21_refinement.py",
+      "source_sha256": "2619c3fd040bc60c0357594a2fb03c8a1ee38c1b066949b26c058ad2a3ebae19"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v22_optimization.py",
+      "source_sha256": "952bfd2064f391fa7cf960048a2da5ab2be6699d25a0bb641595dc580ef2d56a"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v27_optimization.py",
+      "source_sha256": "7ec27c91df9320a5e683e8aa1329675530a35009564ceb8015ea78656a883c37"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v27_reporting.py",
+      "source_sha256": "b94d920192615f274b2ee71e7f7707c1a3b89868c1f3ea79a3bab350690931c1"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v28_optimization.py",
+      "source_sha256": "36138ebb70dd63d81848bc1a34aef82431a79dcef9c2500a28e8486a0fa27353"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v28_reporting.py",
+      "source_sha256": "b6589b07a40d368daf829a71b7ae06bda0fc692f85863d6d41bc293f4fb01b5c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v2_quick_comparison.py",
+      "source_sha256": "b2ed8d037c2e69e6ac81b222d75004ac8cc86eb545c5df06e763b32067fa45e4"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v30_optimization.py",
+      "source_sha256": "c7bc08a37b44d4acca0d4ea0d7e331d3ac23e31584b542334f8a321fdcdde1ab"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v30_reporting.py",
+      "source_sha256": "4dda0a34d0c0d81cb22f33fd8333002a2887a9a08e0a7db186d476f205468694"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v31_optimization.py",
+      "source_sha256": "60236580640a5d168c8492f81053399e373b0e8481ac8ece0f53415bc65fc469"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v31_reporting.py",
+      "source_sha256": "46e5200753c536d52e428592de62a514fdea9f5a189a34534ef6e2934b526448"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v32_optimization.py",
+      "source_sha256": "2af329dbfaaff9c81a6c8a750119a0a0683b7170b548f957db5817f5e302c517"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v32_reporting.py",
+      "source_sha256": "f9b780206fe4b0fe8237548d93c0e82a307d10016931879c39dcbcf03b4ed24c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v33_optimization.py",
+      "source_sha256": "b8e4c673ee3107b65df95fa8677b571035861ce89ed10efce9fde602148c649c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v33_reporting.py",
+      "source_sha256": "a94c278fbf634564e57ded7704f5c28afd0f069ea5979c17f613d4cf4451f1bf"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v34_optimization.py",
+      "source_sha256": "e313b9e01c4392a7777f63ed8e88c534fc677dcc8a9e056a5d630b14582b4f23"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v34_reporting.py",
+      "source_sha256": "b31502e91773e1b03e2c9169e3c0aad28d173effaf5f9a32943da31e9c0030a9"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v35_optimization.py",
+      "source_sha256": "4926e7d0f37566d61edfc24857bca40c68e87b4710f8eae1bb27454afcb44c63"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v35_reporting.py",
+      "source_sha256": "6e17aa44589a962c3766b20d8d51432f1331e7f562b3952e6c3769c53e6d9cf4"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v36_optimization.py",
+      "source_sha256": "b12c89cadf4490afacd26b0fa355ec8ae7bb172e65550508b0af862d38f11268"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v36_reporting.py",
+      "source_sha256": "488ac8812aaee8d791f8c70d3c220771da3a3b668060ffd7128d0e1bd07899d7"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v37_optimization.py",
+      "source_sha256": "84947cd5baa2c03fa1ec5da00c5b2345b6fd58e766f79800e1c8fb1efe27bc1c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v37_reporting.py",
+      "source_sha256": "ee44f43d32f6cc765d9a69261c1e5a16dc5b96409ecbc3dbf4a3806aeda5aa6e"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v40_final_optimization.py",
+      "source_sha256": "41cf15f96120008dc006490b060857859932664266b9b7cde80dcec37e2f78b9"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v40_final_reporting.py",
+      "source_sha256": "c129faaeecea284da1d00990d5f16266aecb617221acaeeda8641a45d264fc1c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v40_reverse_center.py",
+      "source_sha256": "468902d8b350b9211eccd9a1762dc18d48d65b39cf336bd0286579e20b1617c1"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v41_optimization.py",
+      "source_sha256": "a78084bd8b4c11dd7e15f390256eded16cddb22686bbdef45f4827304f49c866"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v42_optimization.py",
+      "source_sha256": "b02c428973dd20beccef79166d62d195c038c6884cdd67c6aa65a4978485d6b8"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v42_reporting.py",
+      "source_sha256": "e880a760aa7cda1663fad8fc3e2972f780e59568867ff8c986af2fc23a36341c"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v50_optimization.py",
+      "source_sha256": "174291131932b9eebde0ff0c65efd5ec540576ac681543a4eb0497002151b444"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v50_reporting.py",
+      "source_sha256": "ed15fae1fabf340b8b18c416212efaf257a1d6eac73dc57f456810ff0b8d1672"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v60_finalization.py",
+      "source_sha256": "69cdc19e0cd54bb61751b3dfab6592143592d6dc4d525a9d416eac2994352de5"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v60_optimization.py",
+      "source_sha256": "26ae3aa45f8d1f1917a0b879a61fe935260536a6b69e923ecffbfb9b3c4c1067"
+    },
+    {
+      "file": "src/lac_itransformer/experiments/v60_reporting.py",
+      "source_sha256": "c4ab89560f19ec27c4eea31b2b14f2a6ad7cb1e512c9086c9e8770888fb407b8"
+    },
+    {
+      "file": "src/lac_itransformer/models/__init__.py",
+      "source_sha256": "6d4972cb88828fb08e3567afb7e9c8b7ca98fc44fd2610b852f079f5d779225c"
+    },
+    {
+      "file": "src/lac_itransformer/models/baselines.py",
+      "source_sha256": "ba6ad92accd786630aceff3a08e2a10794fb4f943ad9f0977914b08649f1a588"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac.py",
+      "source_sha256": "5e81293bf67c355cd58ff83c34ece1e4d07d74f17f322006d700f84b81c4cfbc"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v2.py",
+      "source_sha256": "a521ecaa8680987bbad3696b3f74c799feda6bdfd7d6c284762b8f6ae6efa9a9"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v21.py",
+      "source_sha256": "4321f09959c727258a2eb3e479cae735f9eff40a205ab8af92c576b59c84bb27"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v22.py",
+      "source_sha256": "6868ae5241842054b488698722a867583f0a4fbaf46a3438064b4eb6c1f835df"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v27.py",
+      "source_sha256": "cc7f707383132ab085d4f8747f94372bf4105c4df13dfbe0abd543bbc8335e15"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v28.py",
+      "source_sha256": "1fc6f0b2a73e849866dce9b60204635289b5d567df8d97b3827aa5fc93465668"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v30.py",
+      "source_sha256": "f3cf6358bbfe44166392f18c06518152132b7a0d2f14a70bc13166208c220b83"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v31.py",
+      "source_sha256": "22ce4035cdb29238e6767f4a8af1f01bbcf06d7dc49bcac8d5f654979cf82e7e"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v32.py",
+      "source_sha256": "10b2a9ffd68682077e40cb8e204986c8866f6ffdc25a4b7cff299b3f27242f3b"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v33.py",
+      "source_sha256": "e2626387257bb6fff58361a9a9eab3ef4468169c3141be3ff5f9a0c69fbe7c92"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v34.py",
+      "source_sha256": "23398d727ed096ca5039e070d35e6d38ec1ba5cacd60803b4ba6ad4b6f4dd261"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v35.py",
+      "source_sha256": "32c3b9f4745694cb95ec187cf8196cafeb93052b7a049246bcd78f70eb7ae6bd"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v36.py",
+      "source_sha256": "64ab79cd0b01596a3f348b75bfc67487edb27bf5f3eb10232f591bfd953eec62"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v37.py",
+      "source_sha256": "f72e70bf5a44827f77adf17d17fd44aa276da655afd6a803fce82c614ab44f6d"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v40_final.py",
+      "source_sha256": "9a8f9c91bf5096183daad05c2f554faae8b5189299f1906ee13aab632d2c6161"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v41.py",
+      "source_sha256": "9ee05eacf86b147e83a8b4f07e8b25a616259a2f164efe90efb864a1d2528b18"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v42.py",
+      "source_sha256": "dca257be2487369b93b4dc15832d1df2d7dc231194ae1858326fb92a4e2366ac"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v50.py",
+      "source_sha256": "a3707c625b164bf7b15a3e26314977308832baccebcb82915c592be26f84587b"
+    },
+    {
+      "file": "src/lac_itransformer/models/lac_v60.py",
+      "source_sha256": "795414be391bb30691765619064813c2a3b9809cb6eae1516394ff37e53dd152"
+    },
+    {
+      "file": "src/lac_itransformer/models/official_baselines.py",
+      "source_sha256": "d0765a8df8ef809fb33360927a4718f31c12afcfec1ed73b2a96836254109981"
+    },
+    {
+      "file": "src/lac_itransformer/training/__init__.py",
+      "source_sha256": "be16566cefef5fb048f2925321305a8795b14ccb7ae9caa033c5dca7f69cd453"
+    },
+    {
+      "file": "src/lac_itransformer/training/dataset.py",
+      "source_sha256": "096ed4a05c54159f7c28212a77e0e5635d4a736307128ac4d32fa07fc69895e3"
+    },
+    {
+      "file": "src/lac_itransformer/training/external.py",
+      "source_sha256": "365171d4fdf9788a47874206be2d2637a0d045ad4704814f6abd364758779450"
+    },
+    {
+      "file": "src/lac_itransformer/training/external_all.py",
+      "source_sha256": "1bef4188dff2e83396f4f048ec54c828b7c3bf923732fa06c1c59324a42c03d8"
+    },
+    {
+      "file": "src/lac_itransformer/training/folds.py",
+      "source_sha256": "2d2fa67f82d6409b2f0a585f12965244fa1388d7798e1c070bfd3a4f0d625d16"
+    },
+    {
+      "file": "src/lac_itransformer/training/losses.py",
+      "source_sha256": "95438e9d9f91b3c405ce3d7bd437f3416d07e961f1dd8aaca1ca0c053f0dd027"
+    },
+    {
+      "file": "src/lac_itransformer/training/metrics.py",
+      "source_sha256": "a516e6553c14b8832a6aabb34756c4d00aa75c58e7dd4bc0be46964c7e73e11d"
+    },
+    {
+      "file": "src/lac_itransformer/training/nested.py",
+      "source_sha256": "ccab45abd6d12e53bf9010a03588a62f92f0e47c85206f77551d596a578f1c28"
+    },
+    {
+      "file": "src/lac_itransformer/training/trainer.py",
+      "source_sha256": "d05ab98481d29b3572b1534ddc0911bcafab51925ed0bce3131c695e6f55a8bf"
+    },
+    {
+      "file": "src/lac_itransformer/training/v22_calibration.py",
+      "source_sha256": "2085bf9a618eab0ad97d9fa5e0f80d7d54976f7033155fbdf37e7628d5410724"
+    },
+    {
+      "file": "src/lac_itransformer/training/v22_nested.py",
+      "source_sha256": "88133a098bb3c25dc1f4b8f71974cfc73ccfed04e1e0b61c928736a94d359daa"
+    },
+    {
+      "file": "src/lac_itransformer/training/v27_decision.py",
+      "source_sha256": "a27463bf37e6a7b119ca40b165a46cbd8e5f30ca95fa48e09d042d2997c8c433"
+    },
+    {
+      "file": "src/lac_itransformer/training/v27_nested.py",
+      "source_sha256": "a0b18c051e9f689f24e760acf38ed68b866e1602839fa2981019d8c40e81ebc8"
+    },
+    {
+      "file": "src/lac_itransformer/training/v28_loss.py",
+      "source_sha256": "77873238074325067bf62b95c461b493290e95de36d1a271a90b250912cf9c4e"
+    },
+    {
+      "file": "src/lac_itransformer/training/v28_nested.py",
+      "source_sha256": "fe25b84f711b2a242f91ef504ff042bd8dbc43be16c523f51cc6a956caf5fd68"
+    },
+    {
+      "file": "src/lac_itransformer/training/v28_residual.py",
+      "source_sha256": "754912fe7148100b1bb16a2e569eaa3a1e3d365d401625ec221dc5541d570244"
+    },
+    {
+      "file": "src/lac_itransformer/training/v28_trainer.py",
+      "source_sha256": "9fbfcd52c9baac21d0665d670011d6bd1ff6363df44b5db8985acef4b8dc63aa"
+    },
+    {
+      "file": "src/lac_itransformer/training/v30_nested.py",
+      "source_sha256": "c1ccc047f0526120c14ca1c8234dcb6dd18fc160915ea2478645839575dfc652"
+    },
+    {
+      "file": "src/lac_itransformer/training/v30_selector.py",
+      "source_sha256": "6b8661224c290be5efe19a5c70003a77bb045da4c907c204cc1890d2931cced3"
+    },
+    {
+      "file": "src/lac_itransformer/training/v30_trainer.py",
+      "source_sha256": "449136403d03579ee880c32c8c90872edc25d4e3354df5d27f6632012c550eba"
+    },
+    {
+      "file": "src/lac_itransformer/training/v31_nested.py",
+      "source_sha256": "6efdabb055a820c951c267aa43bf3dde451de21f754f659327de9b2183ece342"
+    },
+    {
+      "file": "src/lac_itransformer/training/v31_selector.py",
+      "source_sha256": "f6680977f568f24251f371f4b9b3c0c24ed25095def029e40d800b66e8d2b25a"
+    },
+    {
+      "file": "src/lac_itransformer/training/v31_trainer.py",
+      "source_sha256": "4115f192acb8a9558159248a9d76424efd9c515f9f5f0c2411f537b3448b22b3"
+    },
+    {
+      "file": "src/lac_itransformer/training/v32_nested.py",
+      "source_sha256": "370e6bf41e7644519cbca9d32dedfa864a93ad2c6b1c5cd646a7dbe372a83383"
+    },
+    {
+      "file": "src/lac_itransformer/training/v32_selector.py",
+      "source_sha256": "251d54692b5d09bd426dd035cc06ac81e47b2fa7517811e1a8ca3fcae29624c4"
+    },
+    {
+      "file": "src/lac_itransformer/training/v32_trainer.py",
+      "source_sha256": "810cf3c77782f927b555965c73217b4eda82f68d1aae27cf9cfaf7a80562455f"
+    },
+    {
+      "file": "src/lac_itransformer/training/v33_nested.py",
+      "source_sha256": "6d95dada3dc1212d9b0fa43f0863e9353486f693662a5e20a6ea6f7db381d29c"
+    },
+    {
+      "file": "src/lac_itransformer/training/v33_trainer.py",
+      "source_sha256": "d85b18fe458ba87fb0f815dcb834bc791cd33c6190579ab42eb9f6625c39d253"
+    },
+    {
+      "file": "src/lac_itransformer/training/v34_nested.py",
+      "source_sha256": "ef6d39e3028d45f16934b4233f64c5e60cdf4766d3362cad172c8947bac6c6c9"
+    },
+    {
+      "file": "src/lac_itransformer/training/v34_trainer.py",
+      "source_sha256": "e12dbed8fc9d606366b40cd2e286feb28dc22dd535bb0fb834b824d4e66665bd"
+    },
+    {
+      "file": "src/lac_itransformer/training/v35_nested.py",
+      "source_sha256": "e331756e03b4cf333778169f282b9005bd6d56a2d221cfde9465f7a05b7f25bb"
+    },
+    {
+      "file": "src/lac_itransformer/training/v35_trainer.py",
+      "source_sha256": "47a24cabe9095772d74ec232c31d5235e5d227f8fad368c22b9ef378e99816a6"
+    },
+    {
+      "file": "src/lac_itransformer/training/v36_nested.py",
+      "source_sha256": "342c1d797ce9d6b260c2e5a0691fe634f6e356166cd718cd31d444924ec055d2"
+    },
+    {
+      "file": "src/lac_itransformer/training/v36_selector.py",
+      "source_sha256": "18ca5b892474711b5f7a6e94becf5087d3fea6c855ddb993addfe573211418fb"
+    },
+    {
+      "file": "src/lac_itransformer/training/v37_external.py",
+      "source_sha256": "8f9d11ddaec8706915c65d65ed066ba146843227586c03bb32faee3c3c95f77e"
+    },
+    {
+      "file": "src/lac_itransformer/training/v37_nested.py",
+      "source_sha256": "18c7c5454693afdb28224dccd84e3210bfcba1507973375926c36f7fa9fc6877"
+    },
+    {
+      "file": "src/lac_itransformer/training/v37_trainer.py",
+      "source_sha256": "9e9bc31120612736ea5c23e66a1814db7c0aa1b51c483c30fa80241dd5aaec7c"
+    },
+    {
+      "file": "src/lac_itransformer/training/v40_final_external.py",
+      "source_sha256": "b57efa8dea35ce918a74088ad0e29fe7524fe0e50ae71888195a77ffd386ac72"
+    },
+    {
+      "file": "src/lac_itransformer/training/v40_final_nested.py",
+      "source_sha256": "0d177d25fb8a744a737f0fce9f6c3378fb809f0ddd1181abc8602c6f5c21ece0"
+    },
+    {
+      "file": "src/lac_itransformer/training/v40_final_selector.py",
+      "source_sha256": "3dc80049c927a2e073d24ff4130fd8a921032919274a8e08334aad3196c8f46a"
+    },
+    {
+      "file": "src/lac_itransformer/training/v41_nested.py",
+      "source_sha256": "345dfdba2ec13595eb3cbcfd5fabc955be0b2ccbc0cad30dc8e875990a770862"
+    },
+    {
+      "file": "src/lac_itransformer/training/v41_selector.py",
+      "source_sha256": "e9d8196b4228479ff6040ef9f46dfd4d12c10cb8f657a1a2b4b97909d4129ad9"
+    },
+    {
+      "file": "src/lac_itransformer/training/v41_trainer.py",
+      "source_sha256": "309a90744c65644b65c6fbeb12f1f343e966aa6b2b8f6934c7ad79d28c384c25"
+    },
+    {
+      "file": "src/lac_itransformer/training/v42_nested.py",
+      "source_sha256": "8737030edebe0028689c44256b70f6adacb052a14d4998ecf369340d30eaa158"
+    },
+    {
+      "file": "src/lac_itransformer/training/v42_selector.py",
+      "source_sha256": "9b87aad4b14a4eed82598343be473c251170022f6a78f3a5330e9fd8bb82c49c"
+    },
+    {
+      "file": "src/lac_itransformer/training/v50_nested.py",
+      "source_sha256": "0cfe9ec82caa426c643976a91ffccdc208f098aa2f2394d3d3b5351bff255a04"
+    },
+    {
+      "file": "src/lac_itransformer/training/v50_uncertainty.py",
+      "source_sha256": "40f9493cf91e0c6be09d563a34b98cc6d56c566bcab1157c87d120d9d76f1e6b"
+    },
+    {
+      "file": "src/lac_itransformer/training/v60_multitask_trainer.py",
+      "source_sha256": "2d031b5bf3ed92281ab075aa41c05e6921988797553cfb5dee1e81f1f0a6051b"
+    },
+    {
+      "file": "src/lac_itransformer/training/v60_nested.py",
+      "source_sha256": "fe319a27e6101a619fde9058b77f9914e047fd87908676438df5f95db280c4c1"
+    },
+    {
+      "file": "src/lac_itransformer/training/v60_selector.py",
+      "source_sha256": "a14ca96798e3d6ac11a5286dd4169907aab33c976b98192dfabdfd3e08fe7957"
+    },
+    {
+      "file": "scripts/run_a323_b31_internal_comparison.py",
+      "source_sha256": "ff331922e80ecc71b2e38b63e8a97c27e38c8a89e788a35545841123a539f039",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    },
+    {
+      "file": "scripts/run_a323_full_refit.py",
+      "source_sha256": "b5b3979b88bb548920643ab7b9940072c364e6093bbf0c65ac3ced5eceebc96f",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    },
+    {
+      "file": "scripts/run_a323_b31_external_validation.py",
+      "source_sha256": "dae2ff57a8487c804f0c34c17b5e5cf670d91ed48a7ed914a0aac51d2a52ae00",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    },
+    {
+      "file": "scripts/run_a323_c546_external_validation.py",
+      "source_sha256": "bd3414feee531c776208a444338864338a0d0f5480c7a3326732994cf2ae3ba8",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    },
+    {
+      "file": "scripts/run_c546_development_external_ab.py",
+      "source_sha256": "be0a8f795ee960c0b246fd95f128263cefe2ad0be3b0860cc5ce04b85f366058",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    },
+    {
+      "file": "scripts/audit_a323_full_refit_external.py",
+      "source_sha256": "ba66eeb52950461745c18a6f1d151ab3ff409ad63ffc5e8699dc75d504be34e8",
+      "adaptations": "portable source/config paths; private cohort identifiers supplied locally; optional model subset and device"
+    }
+  ]
+}

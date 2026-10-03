@@ -1,0 +1,8 @@
+# Versions recorded in the archived C546 full-refit runtime manifest.
+# Supporting dependencies are specified in pyproject.toml.
+# This is a partial historical environment record, not a complete lockfile.
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.6.1
+torch==2.9.1
+xgboost==3.1.2

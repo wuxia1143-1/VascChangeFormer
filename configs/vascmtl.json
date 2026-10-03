@@ -1,0 +1,116 @@
+{
+  "seed": 2026,
+  "training_seed_offset": 0,
+  "result_scope": "A323_B31_SPLIT_STATIC19_LONG16_20260926",
+  "device": "auto",
+  "bootstrap_replicates": 2000,
+  "batch_size": 64,
+  "pretrain_epochs": 0,
+  "stage_tbr_epochs": 120,
+  "stage_cac_epochs": 120,
+  "stage_lag_epochs": 0,
+  "joint_mtl_epochs": 99,
+  "stage_patience": 25,
+  "learning_rate": 0.0003,
+  "hurdle_learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "model_v60": {
+    "hidden_dim": 32,
+    "num_heads": 2,
+    "num_layers": 1,
+    "adapter_rank": 8,
+    "shared_transfer_rank": 4,
+    "cac_adapter_rank": 4,
+    "mechanism_hidden_dim": 8,
+    "dropout": 0.1,
+    "baseline_anchoring": true,
+    "use_private_cac_encoder": true,
+    "strict_historical_transfer": true,
+    "historical_decay_per_year": 1.0,
+    "shared_transfer_enabled": false,
+    "cac_residual_adapter": false,
+    "isolate_cac_shared_gradient": true,
+    "hard_phenotype_views": false,
+    "soft_phenotype_adapters": true,
+    "soft_adapter_rank_i": 4,
+    "soft_adapter_rank_c": 4,
+    "soft_adapter_initial_bias": -2.0,
+    "direction_magnitude_enabled": false,
+    "historical_dose_enabled": false,
+    "cac_historical_inflammation_enabled": false,
+    "mechanism_aux_enabled": false,
+    "mechanism_history_enabled": false,
+    "coupling_enabled": false,
+    "lag_residual_enabled": false,
+    "treatment_conditioning": false,
+    "history_mode": "none",
+    "progression_hurdle_enabled": false,
+    "hurdle_i_to_c_enabled": false,
+    "hurdle_risk_gate_enabled": false,
+    "hurdle_history_enabled": false,
+    "hurdle_treatment_enabled": false,
+    "shared_only_mtl": false
+  },
+  "loss_v31": {
+    "tbr_mse_weight": 0.05
+  },
+  "loss_v35": {
+    "huber_delta": 1.0,
+    "cac_mse_weight": 0.1
+  },
+  "joint_mtl": {
+    "tbr_weight": 0.5,
+    "cac_weight": 0.5
+  },
+  "sampling": {
+    "balance_cac_strata": true,
+    "max_weight_ratio": 4.0
+  },
+  "decision": {
+    "method": "locked_sequential_mechanism_free_oof_robust_calibration",
+    "candidate_weights": [
+      0.0,
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ridge_alphas": [
+      1.0
+    ],
+    "degradation_tolerance": 0.005,
+    "required_consistent_folds": 3,
+    "generic_min_samples_leaf": 20
+  },
+  "acceptance": {
+    "reference": "lac_v40_final_no_tail",
+    "difference_definition": "candidate_minus_reference",
+    "tbr_mae_absolute_degradation": 0.01,
+    "cac_mae_absolute_degradation": 0.01,
+    "require_complete_patient_oof": true,
+    "stage_order": [
+      "V6-A",
+      "V6-B",
+      "V6-C-if-required"
+    ],
+    "preferred_model_rule": "simplest_passing_candidate",
+    "external_evaluation_authorized": false,
+    "interpretation": "internal_development_only"
+  },
+  "core_ablation": {
+    "models": [
+      "lac_v60_c_generic_temporal",
+      "lac_v60_no_task_adapters",
+      "lac_v60_no_baseline_anchoring",
+      "lac_v60_no_oof_calibration",
+      "lac_v60_shared_only_mtl"
+    ],
+    "primary_metric": "pooled_patient_level_mae",
+    "paired_bootstrap_replicates": 2000
+  },
+  "model_name": "vascmtl",
+  "num_folds": 5
+}
