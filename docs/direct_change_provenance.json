@@ -1,0 +1,61 @@
+{
+  "release_date": "2026-10-23",
+  "evaluation_date": "2026-10-22",
+  "prediction_scale": "native post-decision-layer changes, before endpoint reconstruction or clipping",
+  "neural_training_for_this_upload": false,
+  "gbdt_fitting_for_this_upload": false,
+  "continuous_estimates": 180,
+  "paired_ablation_estimates": 18,
+  "private_inputs_or_patient_predictions_published": false,
+  "aggregate_sources": [
+    {
+      "file": "all_continuous_metrics_95ci.csv",
+      "sha256": "60b7540576bba2848d240eeb1d809c402f61544e3a5520658690694f9bf6e4f4"
+    },
+    {
+      "file": "paired_ablation_bootstrap_95ci.csv",
+      "sha256": "7fc927578da205bdbe909720cfba8744fd17d44b2295923663e5d0b42a894e0e"
+    },
+    {
+      "file": "Table_2_Centre_A.csv",
+      "sha256": "22ec942dcb17375bffda9b5d6061197d533346923deba7d5f7376294ab745ec9"
+    },
+    {
+      "file": "Table_3_ablations.csv",
+      "sha256": "5e85aa681fd9921b06e71442736f7fe0670b8901278d1a8babc488e16e88a10c"
+    },
+    {
+      "file": "Table_4_Centre_C.csv",
+      "sha256": "9e58f33f3adeebcce02e93983b8ef8f4fa2f24bdccf52aedab7435ad29e65e41"
+    },
+    {
+      "file": "Table_5_reciprocal.csv",
+      "sha256": "57188a822f3a66a81b8822d2f4071347c24dd20ee5d1ce5577cf8f6856789df0"
+    },
+    {
+      "file": "Table_S3_Centre_B.csv",
+      "sha256": "47d2a4e97b4a1271d8977672fd67a9afb43b403ce90e15a3dce3b6432d10cdae"
+    }
+  ],
+  "original_analysis_scripts": [
+    {
+      "file": "paper_direct_extract.py",
+      "sha256": "97f7719bc65034c6f6182aa0fb5dba0233da0c4686975f4356ce6ee5301413e1"
+    },
+    {
+      "file": "paper_direct_unify.py",
+      "sha256": "c8bd8e22cfd91eef5c861395a5867b8e83e33487e07a3ba4bec64f2c811cb986"
+    },
+    {
+      "file": "evaluate_a323_direct_change_metrics.py",
+      "sha256": "ef2652dba742c69b66590518249d80b3b0799f1d84a6cf0a4fbbddcf959e1322"
+    },
+    {
+      "file": "extract_a323_direct_change_outputs.py",
+      "sha256": "09e16f99b208ee142391da0786114b385c919c5acd9c8ca9e7db2e068d525275"
+    }
+  ],
+  "public_adaptations": "Portable extraction and independent continuous evaluator, documented in docs/DIRECT_CHANGE_EVALUATION.md",
+  "original_training_source_provenance": "docs/source_provenance.json",
+  "aggregate_source_hash_scope": "Original analysis file bytes; published LF file hashes are in release_manifest.json"
+}

@@ -18,6 +18,14 @@
 *.feather
 *.csv
 !results/reference_metrics.csv
+!results/legacy_endpoint_derived/reference_metrics.csv
+!results/direct_change/all_continuous_metrics_95ci.csv
+!results/direct_change/paired_ablation_bootstrap_95ci.csv
+!results/direct_change/Table_2_Centre_A.csv
+!results/direct_change/Table_3_ablations.csv
+!results/direct_change/Table_4_Centre_C.csv
+!results/direct_change/Table_5_reciprocal.csv
+!results/direct_change/Table_S3_Centre_B.csv
 *.tsv
 *.dcm
 *.nii
@@ -40,3 +48,5 @@ dist/
 .idea/
 .vscode/
 .pytest_cache/
+/private_exports/
+*.tar.gz

@@ -3,4 +3,4 @@
 from .models.lac import LACConfig, LACiTransformer
 
 __all__ = ["LACConfig", "LACiTransformer"]
-__version__ = "0.1.0"
+__version__ = "0.2.0"

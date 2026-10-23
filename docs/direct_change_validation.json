@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "validation_date": "2026-10-23",
+  "continuous_point_estimates": 180,
+  "continuous_CI_boundaries": 360,
+  "paired_estimates": 18,
+  "paired_CI_boundaries": 36,
+  "continuous_max_abs_difference": {
+    "estimate": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+  },
+  "paired_max_abs_difference": {
+    "full_model_benefit": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+  },
+  "current_reference_rows_verified": 36,
+  "negative_native_changes_retained": true,
+  "constant_truth_R2_is_undefined": true,
+  "invalid_or_duplicate_or_incomplete_exports_rejected": true,
+  "wrapper_job_generation_checked": true,
+  "Python_syntax_checked": [
+    "direct_change_metrics.py",
+    "evaluate_direct_changes.py",
+    "paper_direct_extract.py",
+    "reproduce_direct_changes.py",
+    "reproduce.py"
+  ],
+  "frozen_weight_inference_rerun_for_this_upload": false,
+  "neural_training_or_GBDT_fitting_for_this_upload": false,
+  "validation_environment": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1"
+  },
+  "private_export_sha256": "5d83af4e97464a9394ac9ce335bf1f08d6677461f438128c796b867fc1bfa829",
+  "CLI_evaluation_smoke_test": "PASS: 180 continuous and 18 paired metrics"
+}

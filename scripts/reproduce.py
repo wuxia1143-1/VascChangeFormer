@@ -92,7 +92,15 @@ def main() -> None:
         for stage in ("run", "aggregate", "refit", "predict", "evaluate"):
             run("run_c546_development_external_ab.py", stage, *common,
                 "--expected-lock-sha256", lock, "--device", args.device)
-    print("Workflow complete. Outputs and patient-level artifacts remain in the local output directory.")
+    # Existing stage tables remain historical endpoint-derived diagnostics.
+    # The final publication table evaluates native changes before reconstruction.
+    direct_dir = output / ("direct_changes_a" if args.development == "a" else "direct_changes")
+    direct_args = ["--a-root", a_root, "--output", direct_dir,
+                   "--device", args.device, "--models", *models]
+    if args.development in ("c", "all"):
+        direct_args.extend(["--c-root", c_root])
+    run("reproduce_direct_changes.py", *direct_args)
+    print(f"Workflow complete. Current metrics: {direct_dir / 'metrics'}; patient-level artifacts remain local.")
 
 
 if __name__ == "__main__":

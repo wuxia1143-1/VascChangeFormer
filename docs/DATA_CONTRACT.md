@@ -1,5 +1,9 @@
 # Private input contract
 
+For completed frozen runs or native-change CSV exports, see
+[the direct-change evaluation contract](DIRECT_CHANGE_EVALUATION.md).
+Predicted changes can be negative and must remain untruncated when exported.
+
 Keep all patient data outside version control. The workflow reads these local files:
 
 | File under `private_data/` | Content |
